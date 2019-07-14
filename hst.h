@@ -1,6 +1,7 @@
 #pragma once
 
 
+#include <stddef.h>
 #include <stdbool.h>
 
 
@@ -10,7 +11,10 @@
 
 typedef struct {
 	const char *host;		// host name
-	int use_mem;			// maximum amount of memory to be used by library
+	unsigned short port;	// port
+	char padding[2];
+
+	size_t mem_total;		// amount of memory to be used by library
 	int backlog;			// backlog parameter for listen()
 } hst_conf_t;
 
