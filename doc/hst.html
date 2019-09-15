@@ -18,12 +18,30 @@
   <body>
     <div class="content">
       <h1>HST library for C language.</h1>
+
       <h2>About.</h2>
-      <p>HST stands for "Http single threaded". This is a simple C library for writing
+
+      <p>HST stands for "Http single threaded". This is a lightweight C library for writing
       HTTP application servers running in constrained environments such as embedded
-      systems or low-end virtual private servers (VPS). Typically it's intended to
-      be used in relatively small C program working behind reverse-proxy such as
-      <a href="http://nginx.org" target="_blank">Nginx</a>.</p>
+      systems or low-end virtual private servers (VPS).</p>
+
+      <p>Servers written with HST are intended to be used with trusted clients or they
+      must be put behind reverse-proxy such as
+      <a href="http://nginx.org" target="_blank">Nginx</a> since they are vulnerable
+      to denial of service (DOS) attack known as slow requests.</p>
+
+<pre>
+todo:
+-----
+
+idea how to overcome slow requests attack:
+1. when connection is made store timestamp.
+2. when recv() returns check passed time. if it is larger then some thershold
+   then abort.
+
+better idea: use nonblocking socket io with timeouts
+</pre>
+
     </div>
   </body>
 </html>
