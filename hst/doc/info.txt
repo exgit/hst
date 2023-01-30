@@ -1,0 +1,3 @@
+https://habr.com/ru/company/wunderfund/blog/713142/
+---------------------------------------------------
+Article about useful HTTP headers.
